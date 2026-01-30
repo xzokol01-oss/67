@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>L.H.K</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            color: white;
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff2b2b;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+        .box {
+            background: #1a1a1a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ff2b2b;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #ff2b2b;
+            color: white;
+            font-weight: bold;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🔥 مرحباً بك في موقع L.H.K 🔥</h1>
+
+<input type="text" id="search" placeholder="🔍 ابحث عن سكربت..." onkeyup="searchScripts()">
+
+<div class="box" data-name="دلتا">
+    <h2>📦 هكر دلتا للأندرويد</h2>
+    <a href="https://deltaexploits.gg/" target="_blank">
+        <button>الدخول لموقع دلتا</button>
+    </a>
+</div>
+
+<div class="box script" data-name="script project f3x f3x">
+    <h2>💻 script project f3x</h2>
+    <button onclick="copyScript()">نسخ السكربت</button>
+</div>
+
+<script>
+function copyScript() {
+    navigator.clipboard.writeText(
+        'loadstring(game:HttpGet("https://pastefy.app/7dUW9wht/raw"))()'
+    );
+    alert("تم نسخ السكربت ✅");
+}
+
+function searchScripts() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let boxes = document.getElementsByClassName("box");
+
+    for (let i = 0; i < boxes.length; i++) {
+        let name = boxes[i].getAttribute("data-name");
+        if (!name || name.toLowerCase().includes(input)) {
+            boxes[i].style.display = "block";
+        } else {
+            boxes[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
